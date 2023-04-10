@@ -6,6 +6,7 @@ import {
 } from './helpers/inquirer.js'
 import Tarea from './models/tarea.js';
 import Tareas from './models/tareas.js';
+import { guardarDB } from './helpers/guardarArchivo.js';
 //const {mostrarMenu,pausa} = require('./helpers/mensajes');
 
 console.clear();
@@ -35,6 +36,7 @@ const main = async() => {
         }
 
         
+        //guardarDB(tareas.ListadoArr)
 
         if(opc !== '0') await pausa();
 
