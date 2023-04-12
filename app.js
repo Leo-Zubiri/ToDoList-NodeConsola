@@ -19,6 +19,7 @@ const main = async() => {
     const tareasDB = leerDB();
     if(tareasDB){
         // Establecer las tareas
+        tareas.cargarTareasFromArray(tareasDB)
     }
 
     await pausa()
