@@ -36,8 +36,11 @@ const main = async() => {
                 tareas.listar();
                 break;
             case '3':
+                // Listar tareas completadas
+                tareas.listarPorEstado(true);
                 break;
             case '4':
+                tareas.listarPorEstado(false);
                 break;
             case '5':
                 break;

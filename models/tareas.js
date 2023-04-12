@@ -33,6 +33,24 @@ class Tareas {
             console.log(`${index+1}. ${tarea.desc} | ${tarea.completadoEn ? 'Completada'.green: 'Pendiente'.red}`)
         })
     }
+
+    listarPorEstado(completadas = true){
+        let i = 0;
+        this.ListadoArr.forEach((tarea,i) => {
+
+            if(completadas){
+                if(tarea.completadoEn){
+                    i++;
+                    console.log(`${i}. ${tarea.desc} | ${tarea.completadoEn + ''.green}`)
+                }
+            }else{
+                if(!tarea.completadoEn){
+                    i++;
+                    console.log(`${i}. ${tarea.desc} | ${'Pendiente'.red}`)
+                }
+            }
+        })
+    }
 }
 
 export default Tareas;
