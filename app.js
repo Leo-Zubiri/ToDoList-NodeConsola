@@ -22,7 +22,6 @@ const main = async() => {
         tareas.cargarTareasFromArray(tareasDB)
     }
 
-    await pausa()
 
     do {
         opc = await inquirerMenu();
@@ -33,7 +32,8 @@ const main = async() => {
                 tareas.crearTarea(desc)
                 break;
             case '2':
-                console.log(tareas.ListadoArr);
+                //console.log(tareas.ListadoArr);
+                tareas.listar();
                 break;
             case '3':
                 break;

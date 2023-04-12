@@ -27,6 +27,12 @@ class Tareas {
 
         return listado;
     }
+
+    listar(){
+        this.ListadoArr.forEach((tarea,index) => {
+            console.log(`${index+1}. ${tarea.desc} | ${tarea.completadoEn ? 'Completada'.green: 'Pendiente'.red}`)
+        })
+    }
 }
 
 export default Tareas;
