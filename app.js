@@ -4,7 +4,8 @@ import {
     pausa,
     leerInput,
     listadoTareasBorrar,
-    confirmar
+    confirmar,
+    listadoCheckList
 } from './helpers/inquirer.js'
 import Tarea from './models/tarea.js';
 import Tareas from './models/tareas.js';
@@ -43,6 +44,11 @@ const main = async() => {
                 break;
             case '4':
                 tareas.listarPorEstado(false);
+                break;
+
+            case '5':
+                const ids = await listadoCheckList(tareas.ListadoArr)
+                tareas.toggleCompletadas(ids)
                 break;
             case '6':
                 const id = await listadoTareasBorrar(tareas.ListadoArr);
