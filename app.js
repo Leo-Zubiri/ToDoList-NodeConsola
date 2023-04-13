@@ -3,6 +3,7 @@ import {
     inquirerMenu, 
     pausa,
     leerInput,
+    listadoTareasBorrar
 } from './helpers/inquirer.js'
 import Tarea from './models/tarea.js';
 import Tareas from './models/tareas.js';
@@ -42,7 +43,8 @@ const main = async() => {
             case '4':
                 tareas.listarPorEstado(false);
                 break;
-            case '5':
+            case '6':
+                const id = await listadoTareasBorrar(tareas.ListadoArr);
                 break;
         }
 
