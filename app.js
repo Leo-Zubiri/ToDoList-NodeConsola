@@ -3,7 +3,8 @@ import {
     inquirerMenu, 
     pausa,
     leerInput,
-    listadoTareasBorrar
+    listadoTareasBorrar,
+    confirmar
 } from './helpers/inquirer.js'
 import Tarea from './models/tarea.js';
 import Tareas from './models/tareas.js';
@@ -45,6 +46,15 @@ const main = async() => {
                 break;
             case '6':
                 const id = await listadoTareasBorrar(tareas.ListadoArr);
+
+                if(id == '0') break;
+                
+                const confirmed = await confirmar('Confirmar Operación: ')
+
+                if (confirmed){
+                    tareas.borrarTarea(id);
+                    console.log('Tarea Eliminada'.red)
+                }
                 break;
         }
 

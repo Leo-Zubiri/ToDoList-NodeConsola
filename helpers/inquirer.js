@@ -90,6 +90,12 @@ const listadoTareasBorrar = async (tareas=[]) => {
         }
     })
 
+    // Agregar al inicio del arreglo
+    choices.unshift({
+        value: '0',
+        name: '0. Cancelar'.yellow
+    })
+
     const preguntas = [
         {
             type: 'list',
@@ -102,9 +108,24 @@ const listadoTareasBorrar = async (tareas=[]) => {
     return id;
 }
 
+const confirmar = async (message) => {
+    const question = [
+        {
+            type: 'confirm',
+            name: 'confirmed',
+            message
+        }
+    ]
+
+    const {confirmed} = await inquirer.prompt(question);
+
+    return confirmed;
+}
+
 export {
     inquirerMenu,
     pausa,
     leerInput,
-    listadoTareasBorrar
+    listadoTareasBorrar,
+    confirmar
 }
